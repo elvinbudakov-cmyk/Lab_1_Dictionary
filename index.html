@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна 1 - Словник</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Інтерактивний словник</h1>
+    </header>
+
+    <main>
+        <section class="add-word-section">
+            <h2>Додати слово</h2>
+            <form id="word-form">
+                <input type="hidden" id="word-id">
+
+                <label for="title">Слово:</label>
+                <!-- HTML5 валідація на літери -->
+                <input type="text" id="title" required pattern="^[a-zA-Zа-яА-ЯіІїЇєЄґҐ\s-]+$">
+
+                <label for="definition">Визначення:</label>
+                <textarea id="definition" required minlength="5"></textarea>
+
+                <label for="example">Приклад (необов'язково):</label>
+                <textarea id="example"></textarea>
+
+                <label for="category">Категорія:</label>
+                <select id="category">
+                    <option value="Програмування">Програмування</option>
+                    <option value="Мережі">Мережі</option>
+                    <option value="Загальне">Загальне</option>
+                </select>
+
+                <button type="submit" id="save-btn">Зберегти</button>
+                <button type="button" id="cancel-btn" style="display: none;">Скасувати</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Список слів</h2>
+            <input type="text" id="search" placeholder="Пошук...">
+            <ul id="word-list"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Виконав ст. Будаков Е.Г гр. КІУКІ-24-1</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
